@@ -178,13 +178,3 @@ if __name__ == '__main__':
               logging.info("\nTEST Student: Epoch: {}".format(com_round))
               logging.info("\nTEST AUROC: {:6f}, TEST Accus: {:6f}, TEST Senss: {:6f}, TEST Specs: {:6f}"
                         .format(AUROC_avg, Accus_avg, Senss_avg, Specs_avg))
-          
-
-
- 
-    
-
-
-               
-
-
