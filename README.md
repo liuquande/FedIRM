@@ -5,7 +5,7 @@ by [Quande Liu](https://github.com/liuquande), [Hongzheng Yang](https://github.c
 
 Pytorch implementation for MICCAI 2021 paper "Federated Semi-supervised Medical Image Classification via Inter-client Relation Matching"
 
-![](figure/miccai21_fedirm.png)
+![](figure/miccai2021_fedirm.png)
 ## Usage
 1. create conda environment
    
