@@ -16,7 +16,7 @@ Pytorch implementation for MICCAI 2021 paper "Federated Semi-supervised Medical 
 
    1. install pytorch==1.8.0 torchvision==0.9.0 (via conda, recommend)
 
-3. download the dataset from [kaggle](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection) and preprocess it follow this [notebook](https://www.kaggle.com/guiferviz/prepare-dataset-resizing-and-saving-as-png). You can download the preprocessed the dataset from [google drive].(https://drive.google.com/drive/folders/1bhe_0KvdxEli7-6ZrQ9ahaDPpSnvF4UW?usp=share_link)
+3. download the dataset from [kaggle](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection) and preprocess it follow this [notebook](https://www.kaggle.com/guiferviz/prepare-dataset-resizing-and-saving-as-png). You can download the preprocessed the dataset from [notebook](https://drive.google.com/drive/folders/1bhe_0KvdxEli7-6ZrQ9ahaDPpSnvF4UW?usp=share_link).
 
 5. modify the corresponding data path in options.py
 
