@@ -4,11 +4,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.model_zoo as model_zoo
 from collections import OrderedDict
-import os 
+import os
 
 __all__ = ['DenseNet', 'densenet121', 'densenet169', 'densenet201', 'densenet161']
 
-os.environ['TORCH_HOME'] = '/research/pheng4/qdliu/anaconda/envs/pytorch/models'
+os.environ['TORCH_HOME'] = '/media/undergrad/Data/tubitak-code/nf/models'
 
 model_urls = {
     'densenet121': 'https://download.pytorch.org/models/densenet121-a639ec97.pth',
