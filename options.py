@@ -8,12 +8,14 @@ def args_parser():
         "--root_path",
         type=str,
         default="/media/undergrad/Data/tubitak-data/ham10000/all_images",
+        # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/organized/stage_2_train",
         help="dataset root dir",
     )
     parser.add_argument(
         "--csv_file_train",
         type=str,
         default="/media/undergrad/Data/tubitak-data/ham10000/train.csv",
+        # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/training.csv",
         help="training set csv file",
     )
     # parser.add_argument('--csv_file_val', type=str, default='/research/pheng4/qdliu/Semi/dataset/skin/validation.csv', help='validation set csv file')
@@ -21,7 +23,15 @@ def args_parser():
         "--csv_file_test",
         type=str,
         default="/media/undergrad/Data/tubitak-data/ham10000/test.csv",
+        # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/testing.csv",
         help="testing set csv file",
+    )
+    parser.add_argument(
+        "--num_classes",
+        type=int,
+        default=7,
+        # default=5,
+        help="number of classes",
     )
     parser.add_argument("--batch_size", type=int, default=24, help="batch_size per gpu")
     parser.add_argument("--drop_rate", type=int, default=0.2, help="dropout rate")
@@ -29,7 +39,7 @@ def args_parser():
         "--ema_consistency", type=int, default=1, help="whether train baseline model"
     )
     parser.add_argument(
-        "--base_lr", type=float, default=2e-4, help="maximum epoch number to train"
+        "--base_lr", type=float, default=2e-4, help="learning rate for baseline model"
     )
     parser.add_argument(
         "--deterministic",
@@ -39,9 +49,9 @@ def args_parser():
     )
     parser.add_argument("--seed", type=int, default=1337, help="random seed")
     parser.add_argument("--gpu", type=str, default="0", help="GPU to use")
-    parser.add_argument("--local_ep", type=int, default=5, help="local epoch")
+    parser.add_argument("--local_ep", type=int, default=1, help="local epoch")
     parser.add_argument("--num_users", type=int, default=10, help="local epoch")
-    parser.add_argument("--rounds", type=int, default=51, help="local epoch")
+    parser.add_argument("--rounds", type=int, default=101, help="local epoch")
 
     ### tune
     parser.add_argument("--resume", type=str, default=None, help="model to resume")

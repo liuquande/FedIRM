@@ -45,7 +45,9 @@ class UnsupervisedLocalUpdate(object):
             pin_memory=True,
         )
         net = DenseNet121(
-            out_size=5, mode=args.label_uncertainty, drop_rate=args.drop_rate
+            out_size=args.num_classes,
+            mode=args.label_uncertainty,
+            drop_rate=args.drop_rate,
         )
         if len(args.gpu.split(",")) > 1:
             net = torch.nn.DataParallel(net, device_ids=[0, 1])

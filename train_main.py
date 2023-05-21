@@ -30,7 +30,9 @@ def test(epoch, save_mode_path):
     checkpoint_path = save_mode_path
 
     checkpoint = torch.load(checkpoint_path)
-    net = DenseNet121(out_size=5, mode=args.label_uncertainty, drop_rate=args.drop_rate)
+    net = DenseNet121(
+        out_size=args.num_classes, mode=args.label_uncertainty, drop_rate=args.drop_rate
+    )
     model = net.cuda()
     model.load_state_dict(checkpoint["state_dict"])
     normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
@@ -115,7 +117,9 @@ if __name__ == "__main__":
     train_dataset, _ = torch.utils.data.random_split(train_dataset, [0.875, 0.125])
     dict_users = split(train_dataset, args.num_users)
     net_glob = DenseNet121(
-        out_size=5, mode=args.label_uncertainty, drop_rate=args.drop_rate
+        out_size=args.num_classes,
+        mode=args.label_uncertainty,
+        drop_rate=args.drop_rate,
     )
 
     if len(args.gpu.split(",")) > 1:

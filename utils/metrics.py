@@ -2,10 +2,23 @@
 import pdb
 import numpy as np
 from imblearn.metrics import sensitivity_score, specificity_score
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score,
+    roc_auc_score,
+)
 
 N_CLASSES = 5
-CLASS_NAMES = [ 'Melanoma', 'Melanocytic nevus', 'Basal cell carcinoma', 'Actinic keratosis', 'Benign keratosis']
+CLASS_NAMES = [
+    "Melanoma",
+    "Melanocytic nevus",
+    "Basal cell carcinoma",
+    "Actinic keratosis",
+    "Benign keratosis",
+]
+
 
 def compute_AUCs(gt, pred, competition=True):
     """
@@ -58,40 +71,40 @@ def compute_metrics(gt, pred, competition=True):
     pred_np = pred.cpu().detach().numpy()
     THRESH = 0.18
     #     indexes = TARGET_INDEXES if competition else range(N_CLASSES)
-    #indexes = range(n_classes)
+    # indexes = range(n_classes)
 
-#     pdb.set_trace()
+    #     pdb.set_trace()
     indexes = range(len(CLASS_NAMES))
 
     for i, cls in enumerate(indexes):
         try:
             AUROCs.append(roc_auc_score(gt_np[:, i], pred_np[:, i]))
         except ValueError as error:
-            print('Error in computing accuracy for {}.\n Error msg:{}'.format(i, error))
+            print("Error in computing accuracy for {}.\n Error msg:{}".format(i, error))
             AUROCs.append(0)
 
         try:
-            Accus.append(accuracy_score(gt_np[:, i], (pred_np[:, i]>=THRESH)))
+            Accus.append(accuracy_score(gt_np[:, i], (pred_np[:, i] >= THRESH)))
         except ValueError as error:
-            print('Error in computing accuracy for {}.\n Error msg:{}'.format(i, error))
+            print("Error in computing accuracy for {}.\n Error msg:{}".format(i, error))
             Accus.append(0)
 
         try:
-            Senss.append(sensitivity_score(gt_np[:, i], (pred_np[:, i]>=THRESH)))
+            Senss.append(sensitivity_score(gt_np[:, i], (pred_np[:, i] >= THRESH)))
         except ValueError:
-            print('Error in computing precision for {}.'.format(i))
+            print("Error in computing precision for {}.".format(i))
             Senss.append(0)
 
-
         try:
-            Specs.append(specificity_score(gt_np[:, i], (pred_np[:, i]>=THRESH)))
+            Specs.append(specificity_score(gt_np[:, i], (pred_np[:, i] >= THRESH)))
         except ValueError:
-            print('Error in computing F1-score for {}.'.format(i))
+            print("Error in computing F1-score for {}.".format(i))
             Specs.append(0)
 
     return AUROCs, Accus, Senss, Specs
 
-def compute_metrics_test(gt, pred,  thresh, competition=True):
+
+def compute_metrics_test(gt, pred, thresh, competition=True):
     """
     Computes accuracy, precision, recall and F1-score from prediction scores.
     Args:
@@ -115,47 +128,48 @@ def compute_metrics_test(gt, pred,  thresh, competition=True):
     pred_np = pred.cpu().detach().numpy()
     THRESH = thresh
     #     indexes = TARGET_INDEXES if competition else range(N_CLASSES)
-    #indexes = range(n_classes)
+    # indexes = range(n_classes)
 
-#     pdb.set_trace()
+    #     pdb.set_trace()
     indexes = range(len(CLASS_NAMES))
 
     for i, cls in enumerate(indexes):
         try:
             AUROCs.append(roc_auc_score(gt_np[:, i], pred_np[:, i]))
         except ValueError as error:
-            print('Error in computing accuracy for {}.\n Error msg:{}'.format(i, error))
+            print("Error in computing accuracy for {}.\n Error msg:{}".format(i, error))
             AUROCs.append(0)
 
         try:
-            Accus.append(accuracy_score(gt_np[:, i], (pred_np[:, i]>=THRESH)))
+            Accus.append(accuracy_score(gt_np[:, i], (pred_np[:, i] >= THRESH)))
         except ValueError as error:
-            print('Error in computing accuracy for {}.\n Error msg:{}'.format(i, error))
+            print("Error in computing accuracy for {}.\n Error msg:{}".format(i, error))
             Accus.append(0)
 
         try:
-            Senss.append(sensitivity_score(gt_np[:, i], (pred_np[:, i]>=THRESH)))
+            Senss.append(sensitivity_score(gt_np[:, i], (pred_np[:, i] >= THRESH)))
         except ValueError:
-            print('Error in computing precision for {}.'.format(i))
+            print("Error in computing precision for {}.".format(i))
             Senss.append(0)
 
-
         try:
-            Specs.append(specificity_score(gt_np[:, i], (pred_np[:, i]>=THRESH)))
+            Specs.append(specificity_score(gt_np[:, i], (pred_np[:, i] >= THRESH)))
         except ValueError:
-            print('Error in computing F1-score for {}.'.format(i))
+            print("Error in computing F1-score for {}.".format(i))
             Specs.append(0)
 
         try:
-            Pre.append(precision_score(gt_np[:, i], (pred_np[:, i]>=THRESH)))
+            Pre.append(precision_score(gt_np[:, i], (pred_np[:, i] >= THRESH)))
         except ValueError:
-            print('Error in computing F1-score for {}.'.format(i))
+            print("Error in computing F1-score for {}.".format(i))
             Pre.append(0)
 
         try:
-            F1.append(f1_score(gt_np[:, i], (pred_np[:, i]>=THRESH)))
+            F1.append(
+                f1_score(gt_np[:, i], (pred_np[:, i] >= THRESH), average="weighted")
+            )
         except ValueError:
-            print('Error in computing F1-score for {}.'.format(i))
+            print("Error in computing F1-score for {}.".format(i))
             F1.append(0)
 
     return AUROCs, Accus, Senss, Specs, Pre, F1

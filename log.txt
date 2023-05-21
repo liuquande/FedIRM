@@ -146,3 +146,152 @@ TEST AUROC: 0.832938, TEST Accus: 0.865588, TEST Senss: 0.555340, TEST Specs: 0.
 TEST Student: Epoch: 50
 [11:15:31.357]
 TEST AUROC: 0.833788, TEST Accus: 0.867785, TEST Senss: 0.557160, TEST Specs: 0.903898
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+[17:20:33.546] Namespace(root_path='/media/undergrad/Data/tubitak-data/ham10000/all_images', csv_file_train='/media/undergrad/Data/tubitak-data/ham10000/train.csv', csv_file_test='/media/undergrad/Data/tubitak-data/ham10000/test.csv', batch_size=24, drop_rate=0.2, ema_consistency=1, base_lr=0.0002, deterministic=1, seed=1337, gpu='0', local_ep=1, num_users=10, rounds=101, resume=None, start_epoch=0, global_step=0, label_uncertainty='U-Ones', ema_decay=0.99, consistency=1, consistency_rampup=30)
+[00:57:19.434] Namespace(root_path='/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/organized/stage_2_train', csv_file_train='/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/training.csv', csv_file_test='/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/testing.csv', batch_size=24, drop_rate=0.2, ema_consistency=1, base_lr=0.0002, deterministic=1, seed=1337, gpu='0', local_ep=1, num_users=10, rounds=101, resume=None, start_epoch=0, global_step=0, label_uncertainty='U-Ones', ema_decay=0.99, consistency=1, consistency_rampup=30)
+[00:58:24.704] Loss Avg 2.7510414972697217 Round 0 LR 0.0002 
+[00:59:47.106] 
+TEST Student: Epoch: 0
+[00:59:47.107] 
+TEST AUROC: 0.735697, TEST Accus: 0.817496, TEST Senss: 0.330795, TEST Specs: 0.916120
+[01:00:27.164] Loss Avg 2.371588328113295 Round 1 LR 0.0002 
+[01:01:07.086] Loss Avg 2.1782794292658973 Round 2 LR 0.0002 
+[01:01:47.033] Loss Avg 2.0428544299243248 Round 3 LR 0.0002 
+[01:02:26.477] Loss Avg 1.9576575927538415 Round 4 LR 0.0002 
+[01:03:05.916] Loss Avg 1.8639991373231966 Round 5 LR 0.0002 
+[01:03:45.296] Loss Avg 1.7768054980121246 Round 6 LR 0.0002 
+[01:04:24.625] Loss Avg 1.7290768068130702 Round 7 LR 0.0002 
+[01:05:04.060] Loss Avg 1.6204737318705207 Round 8 LR 0.0002 
+[01:05:43.568] Loss Avg 1.6070439676715904 Round 9 LR 0.0002 
+[01:06:22.896] Loss Avg 1.5375987846557408 Round 10 LR 0.0002 
+[01:06:32.393] 
+TEST Student: Epoch: 10
+[01:06:32.394] 
+TEST AUROC: 0.873369, TEST Accus: 0.892471, TEST Senss: 0.588254, TEST Specs: 0.921674
+[01:07:11.657] Loss Avg 1.4768111771100187 Round 11 LR 0.0002 
+[01:07:51.128] Loss Avg 1.429103326307584 Round 12 LR 0.0002 
+[01:08:30.390] Loss Avg 1.4134412628330597 Round 13 LR 0.0002 
+[01:09:09.808] Loss Avg 1.3212806051724577 Round 14 LR 0.0002 
+[01:09:49.128] Loss Avg 1.2949495981000874 Round 15 LR 0.0002 
+[01:10:28.809] Loss Avg 1.2533891972613662 Round 16 LR 0.0002 
+[01:11:08.009] Loss Avg 1.264629789002954 Round 17 LR 0.0002 
+[01:11:47.352] Loss Avg 1.1765650339322549 Round 18 LR 0.0002 
+[01:12:26.526] Loss Avg 1.1462198067201328 Round 19 LR 0.0002 
+[01:13:05.648] Loss Avg 1.1436922509376317 Round 20 LR 0.0002 
+[01:13:15.227] 
+TEST Student: Epoch: 20
+[01:13:15.227] 
+TEST AUROC: 0.843325, TEST Accus: 0.893749, TEST Senss: 0.595427, TEST Specs: 0.921863
+[01:20:10.313] Loss Avg 1.1493362020139826 Round 21 LR 0.0002 
+[01:27:19.641] Loss Avg 1.0722664002278082 Round 22 LR 0.0002 
+[01:34:19.290] Loss Avg 1.0081329259562166 Round 23 LR 0.0002 
+[01:41:12.639] Loss Avg 1.0125425399982766 Round 24 LR 0.0002 
+[01:48:06.844] Loss Avg 0.9822026855733297 Round 25 LR 0.0002 
+[01:54:58.631] Loss Avg 1.0110860926239458 Round 26 LR 0.0002 
+[02:01:49.164] Loss Avg 0.9919827994418471 Round 27 LR 0.0002 
+[02:08:38.728] Loss Avg 0.9821811644590067 Round 28 LR 0.0002 
+[02:15:29.020] Loss Avg 0.9800561066767941 Round 29 LR 0.0002 
+[02:22:18.685] Loss Avg 0.9511656564392454 Round 30 LR 0.0002 
+[02:22:28.343] 
+TEST Student: Epoch: 30
+[02:22:28.344] 
+TEST AUROC: 0.868765, TEST Accus: 0.894308, TEST Senss: 0.592798, TEST Specs: 0.923995
+[02:29:18.210] Loss Avg 0.8917970478534698 Round 31 LR 0.0002 
+[02:36:07.494] Loss Avg 0.9096892515069819 Round 32 LR 0.0002 
+[02:42:57.250] Loss Avg 0.8839830274859521 Round 33 LR 0.0002 
+[02:49:47.131] Loss Avg 0.8433599825795381 Round 34 LR 0.0002 
+[02:56:36.297] Loss Avg 0.8540895596554835 Round 35 LR 0.0002 
+[03:03:25.715] Loss Avg 0.8351801809791015 Round 36 LR 0.0002 
+[03:10:15.207] Loss Avg 0.8534035039070534 Round 37 LR 0.0002 
+[03:17:05.337] Loss Avg 0.8226074183844541 Round 38 LR 0.0002 
+[03:23:54.757] Loss Avg 0.8130618014768377 Round 39 LR 0.0002 
+[03:30:44.184] Loss Avg 0.8265698829742327 Round 40 LR 0.0002 
+[03:30:53.706] 
+TEST Student: Epoch: 40
+[03:30:53.707] 
+TEST AUROC: 0.867800, TEST Accus: 0.890354, TEST Senss: 0.584459, TEST Specs: 0.922855
+[03:37:43.605] Loss Avg 0.8337718042404685 Round 41 LR 0.0002 
+[03:44:33.375] Loss Avg 0.821938959417278 Round 42 LR 0.0002 
+[03:51:23.271] Loss Avg 0.8215633415604291 Round 43 LR 0.0002 
+[03:58:12.975] Loss Avg 0.8291593313217163 Round 44 LR 0.0002 
+[04:05:02.763] Loss Avg 0.8072823984573965 Round 45 LR 0.0002 
+[04:11:52.497] Loss Avg 0.7804733823423515 Round 46 LR 0.0002 
+[04:18:42.063] Loss Avg 0.8166574838430913 Round 47 LR 0.0002 
+[04:25:32.087] Loss Avg 0.7799870667800513 Round 48 LR 0.0002 
+[04:32:21.752] Loss Avg 0.860421540761647 Round 49 LR 0.0002 
+[04:39:11.421] Loss Avg 0.8222719506858146 Round 50 LR 0.0002 
+[04:39:20.901] 
+TEST Student: Epoch: 50
+[04:39:20.902] 
+TEST AUROC: 0.860905, TEST Accus: 0.887398, TEST Senss: 0.588321, TEST Specs: 0.920522
+[04:46:10.550] Loss Avg 0.8231870800869105 Round 51 LR 0.0002 
+[04:53:00.056] Loss Avg 0.7912908705742391 Round 52 LR 0.0002 
+[04:59:49.555] Loss Avg 0.7819350640047087 Round 53 LR 0.0002 
+[05:06:39.396] Loss Avg 0.7653875905152869 Round 54 LR 0.0002 
+[05:13:28.975] Loss Avg 0.7811483928806162 Round 55 LR 0.0002 
+[05:20:18.595] Loss Avg 0.7804720868598924 Round 56 LR 0.0002 
+[05:27:08.381] Loss Avg 0.7752228290454981 Round 57 LR 0.0002 
+[05:33:57.992] Loss Avg 0.7949549326749696 Round 58 LR 0.0002 
+[05:40:48.030] Loss Avg 0.7936695724725723 Round 59 LR 0.0002 
+[05:47:37.367] Loss Avg 0.7962213638506522 Round 60 LR 0.0002 
+[05:47:46.872] 
+TEST Student: Epoch: 60
+[05:47:46.872] 
+TEST AUROC: 0.860668, TEST Accus: 0.889155, TEST Senss: 0.590520, TEST Specs: 0.921246
+[05:54:36.664] Loss Avg 0.8019133744786864 Round 61 LR 0.0002 
+[06:01:25.788] Loss Avg 0.7330635319017385 Round 62 LR 0.0002 
+[06:08:15.674] Loss Avg 0.7490187906443255 Round 63 LR 0.0002 
+[06:15:05.337] Loss Avg 0.782301607340166 Round 64 LR 0.0002 
+[06:21:55.714] Loss Avg 0.7643391230947352 Round 65 LR 0.0002 
+[06:28:45.621] Loss Avg 0.7683817407039747 Round 66 LR 0.0002 
+[06:35:35.290] Loss Avg 0.7652399614657442 Round 67 LR 0.0002 
+[06:42:24.891] Loss Avg 0.7497826408237627 Round 68 LR 0.0002 
+[06:49:14.622] Loss Avg 0.7792653250571799 Round 69 LR 0.0002 
+[06:56:03.981] Loss Avg 0.7880904685961057 Round 70 LR 0.0002 
+[06:56:13.504] 
+TEST Student: Epoch: 70
+[06:56:13.504] 
+TEST AUROC: 0.862346, TEST Accus: 0.882844, TEST Senss: 0.585602, TEST Specs: 0.918677
+[07:03:03.074] Loss Avg 0.7909308044469521 Round 71 LR 0.0002 
+[07:09:52.812] Loss Avg 0.7239992472611061 Round 72 LR 0.0002 
+[07:16:41.963] Loss Avg 0.7877283629897521 Round 73 LR 0.0002 
+[07:23:31.707] Loss Avg 0.7507006344729907 Round 74 LR 0.0002 
+[07:30:21.748] Loss Avg 0.7946178893112157 Round 75 LR 0.0002 
+[07:37:11.501] Loss Avg 0.7538248896190565 Round 76 LR 0.0002 
+[07:44:01.084] Loss Avg 0.7924692342950872 Round 77 LR 0.0002 
+[07:50:50.547] Loss Avg 0.7515156404204564 Round 78 LR 0.0002 
+[07:57:40.242] Loss Avg 0.7553787157143631 Round 79 LR 0.0002 
+[08:04:29.977] Loss Avg 0.8238528867698693 Round 80 LR 0.0002 
+[08:04:39.520] 
+TEST Student: Epoch: 80
+[08:04:39.521] 
+TEST AUROC: 0.866180, TEST Accus: 0.883084, TEST Senss: 0.586923, TEST Specs: 0.919048
+[08:11:29.271] Loss Avg 0.8254081578083234 Round 81 LR 0.0002 
+[08:18:19.348] Loss Avg 0.7837104628755622 Round 82 LR 0.0002 
+[08:25:09.256] Loss Avg 0.7806610007808633 Round 83 LR 0.0002 
+[08:31:58.887] Loss Avg 0.7706353275743248 Round 84 LR 0.0002 
+[08:38:48.945] Loss Avg 0.7803634857069957 Round 85 LR 0.0002 
+[08:45:38.719] Loss Avg 0.7643846746176891 Round 86 LR 0.0002 
+[08:52:28.259] Loss Avg 0.7597904143676366 Round 87 LR 0.0002 
+[08:59:17.860] Loss Avg 0.7324074065440321 Round 88 LR 0.0002 
+[09:06:07.832] Loss Avg 0.7697834229836725 Round 89 LR 0.0002 
+[09:12:57.317] Loss Avg 0.7527760449541759 Round 90 LR 0.0002 
+[09:13:06.941] 
+TEST Student: Epoch: 90
+[09:13:06.942] 
+TEST AUROC: 0.860099, TEST Accus: 0.882365, TEST Senss: 0.588117, TEST Specs: 0.917854
+[09:19:56.516] Loss Avg 0.7325149935810532 Round 91 LR 0.0002 
+[09:26:46.686] Loss Avg 0.7907790459998667 Round 92 LR 0.0002 
+[09:33:36.255] Loss Avg 0.7295148877656622 Round 93 LR 0.0002 
+[09:40:26.209] Loss Avg 0.7664570546721758 Round 94 LR 0.0002 
+[09:47:15.340] Loss Avg 0.7827830012938748 Round 95 LR 0.0002 
+[09:54:05.180] Loss Avg 0.7403821258104011 Round 96 LR 0.0002 
+[10:00:54.733] Loss Avg 0.7630229029753437 Round 97 LR 0.0002 
+[10:07:44.590] Loss Avg 0.7755831200374315 Round 98 LR 0.0002 
+[10:14:34.212] Loss Avg 0.7431850596854133 Round 99 LR 0.0002 
+[10:21:24.274] Loss Avg 0.7866641793961395 Round 100 LR 0.0002 
+[10:21:33.769] 
+TEST Student: Epoch: 100
+[10:21:33.769] 
+TEST AUROC: 0.855802, TEST Accus: 0.881925, TEST Senss: 0.586198, TEST Specs: 0.916573
+[11:59:35.804] Namespace(root_path='/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/organized/stage_2_train', csv_file_train='/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/training.csv', csv_file_test='/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/testing.csv', batch_size=24, drop_rate=0.2, ema_consistency=1, base_lr=0.0002, deterministic=1, seed=1337, gpu='0', local_ep=1, num_users=10, rounds=101, resume=None, start_epoch=0, global_step=0, label_uncertainty='U-Ones', ema_decay=0.99, consistency=1, consistency_rampup=30)
