@@ -13,7 +13,7 @@ import random
 import pandas as pd
 
 args = args_parser()
-checkpoint_path = os.path.join("model/", "epoch_100.pth")
+checkpoint_path = os.path.join("model/ham10000_sup", "epoch_100.pth")
 
 if __name__ == "__main__":
     checkpoint = torch.load(checkpoint_path)

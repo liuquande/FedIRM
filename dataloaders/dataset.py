@@ -12,9 +12,17 @@ import os
 import itertools
 from torch.utils.data.sampler import Sampler
 
+# brain tumor dataset
+# N_CLASSES = 5
+# CLASS_NAMES = [ 'Melanoma', 'Melanocytic nevus', 'Basal cell carcinoma', 'Actinic keratosis', 'Benign keratosis']
 
-N_CLASSES = 5
-CLASS_NAMES = [ 'Melanoma', 'Melanocytic nevus', 'Basal cell carcinoma', 'Actinic keratosis', 'Benign keratosis']
+# ham10000 dataset
+# N_CLASSES = 7
+# CLASS_NAMES = ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
+
+# isic2019 dataset
+N_CLASSES = 8
+CLASS_NAMES = ["MEL", "NV", "BCC", "AK", "BKL", "DF", "VASC", "SCC"]
 
 
 class CheXpertDataset(Dataset):
@@ -30,11 +38,11 @@ class CheXpertDataset(Dataset):
         file = pd.read_csv(csv_file)
 
         self.root_dir = root_dir
-        self.images = file['ImageID'].values
+        self.images = file["ImageID"].values
         self.labels = file.iloc[:, 1:].values.astype(int)
         self.transform = transform
 
-        print('Total # images:{}, labels:{}'.format(len(self.images),len(self.labels)))
+        print("Total # images:{}, labels:{}".format(len(self.images), len(self.labels)))
 
     def __getitem__(self, index):
         """
@@ -43,12 +51,12 @@ class CheXpertDataset(Dataset):
         Returns:
             image and its labels
         """
-        items = self.images[index]#.split('/')
-        #study = items[2] + '/' + items[3]
+        items = self.images[index]  # .split('/')
+        # study = items[2] + '/' + items[3]
         image_name = os.path.join(self.root_dir, self.images[index])
-        image = Image.open(image_name).convert('RGB')
+        image = Image.open(image_name).convert("RGB")
         label = self.labels[index]
-        #print(label)
+        # print(label)
         if self.transform is not None:
             image = self.transform(image)
         return items, index, image, torch.FloatTensor(label)
@@ -65,4 +73,3 @@ class TransformTwice:
         out1 = self.transform(inp)
         out2 = self.transform(inp)
         return out1, out2
-

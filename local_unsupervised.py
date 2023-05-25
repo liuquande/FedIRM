@@ -118,7 +118,7 @@ class UnsupervisedLocalUpdate(object):
                 mask = confidence_mask * uncertainty_mask
 
                 pseudo_labels = torch.argmax(activations[mask], dim=1)
-                pseudo_labels = F.one_hot(pseudo_labels, num_classes=5)
+                pseudo_labels = F.one_hot(pseudo_labels, num_classes=args.num_classes)
                 source_matrix = get_confuse_matrix(outputs[mask], pseudo_labels)
 
                 consistency_weight = get_current_consistency_weight(self.epoch)

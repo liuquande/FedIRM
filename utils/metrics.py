@@ -10,14 +10,23 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 
-N_CLASSES = 5
-CLASS_NAMES = [
-    "Melanoma",
-    "Melanocytic nevus",
-    "Basal cell carcinoma",
-    "Actinic keratosis",
-    "Benign keratosis",
-]
+# brain tumor dataset
+# N_CLASSES = 5
+# CLASS_NAMES = [
+#     "Melanoma",
+#     "Melanocytic nevus",
+#     "Basal cell carcinoma",
+#     "Actinic keratosis",
+#     "Benign keratosis",
+# ]
+
+# ham10000 dataset
+# N_CLASSES = 7
+# CLASS_NAMES = ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
+
+# isic2019 dataset
+N_CLASSES = 8
+CLASS_NAMES = ["MEL", "NV", "BCC", "AKIEC", "BKL", "DF", "VASC", "SCC"]
 
 
 def compute_AUCs(gt, pred, competition=True):

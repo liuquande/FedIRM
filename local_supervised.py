@@ -35,7 +35,7 @@ class SupervisedLocalUpdate(object):
 
         self.epoch = 0
         self.iter_num = 0
-        self.confuse_matrix = torch.zeros((5, 5)).cuda()
+        self.confuse_matrix = torch.zeros((args.num_classes, args.num_classes)).cuda()
         self.base_lr = args.base_lr
 
     def train(self, args, net, op_dict):
@@ -49,7 +49,7 @@ class SupervisedLocalUpdate(object):
             param_group["lr"] = self.base_lr
 
         loss_fn = losses.LabelSmoothingCrossEntropy()
-        self.confuse_matrix = torch.zeros((5, 5)).cuda()
+        self.confuse_matrix = torch.zeros((args.num_classes, args.num_classes)).cuda()
         # train and update
         epoch_loss = []
         print("begin training")

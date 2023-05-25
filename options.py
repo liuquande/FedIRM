@@ -7,30 +7,34 @@ def args_parser():
     parser.add_argument(
         "--root_path",
         type=str,
-        default="/media/undergrad/Data/tubitak-data/ham10000/all_images",
+        # default="/media/undergrad/Data/tubitak-data/ham10000/all_images",
         # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/organized/stage_2_train",
+        default="/media/undergrad/Data/tubitak-data/isic2019/all_images",
         help="dataset root dir",
     )
     parser.add_argument(
         "--csv_file_train",
         type=str,
-        default="/media/undergrad/Data/tubitak-data/ham10000/train.csv",
+        # default="/media/undergrad/Data/tubitak-data/ham10000/train.csv",
         # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/training.csv",
+        default="/media/undergrad/Data/tubitak-data/isic2019/train.csv",
         help="training set csv file",
     )
     # parser.add_argument('--csv_file_val', type=str, default='/research/pheng4/qdliu/Semi/dataset/skin/validation.csv', help='validation set csv file')
     parser.add_argument(
         "--csv_file_test",
         type=str,
-        default="/media/undergrad/Data/tubitak-data/ham10000/test.csv",
+        # default="/media/undergrad/Data/tubitak-data/ham10000/test.csv",
         # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/testing.csv",
+        default="/media/undergrad/Data/tubitak-data/isic2019/test.csv",
         help="testing set csv file",
     )
     parser.add_argument(
         "--num_classes",
         type=int,
-        default=7,
+        # default=7,
         # default=5,
+        default=8,
         help="number of classes",
     )
     parser.add_argument("--batch_size", type=int, default=24, help="batch_size per gpu")

@@ -16,6 +16,8 @@ from local_supervised import SupervisedLocalUpdate
 from local_unsupervised import UnsupervisedLocalUpdate
 from torch.utils.data import DataLoader
 
+os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
+
 
 def split(dataset, num_users):
     num_items = int(len(dataset) / num_users)
@@ -65,13 +67,15 @@ def test(epoch, save_mode_path):
     return AUROC_avg, Accus_avg, Senss_avg, Specs_avg
 
 
-snapshot_path = "model/"
+snapshot_path = "model/isic2019_ssfl/"
 
 AUROCs = []
 Accus = []
 Senss = []
 Specs = []
 
+# supervised_user_id = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# unsupervised_user_id = []
 supervised_user_id = [0, 1]
 unsupervised_user_id = [2, 3, 4, 5, 6, 7, 8, 9]
 flag_create = False
@@ -80,6 +84,11 @@ print("done")
 
 if __name__ == "__main__":
     args = args_parser()
+
+    # add a line end of the log file
+    with open("log.txt", "a") as f:
+        f.write(f"\n{100*'-'}\n")
+
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
     logging.basicConfig(
         filename="log.txt",
