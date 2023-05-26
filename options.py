@@ -5,18 +5,28 @@ from networks.models import DenseNet121
 def args_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--mode",
+        type=str,
+        default="ssfl",
+        choices=["ssfl", "sup", "unsup"],
+        help="mode of training",
+    )
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        default="isic2019",
+        choices=["ham10000", "brain", "isic2019"],
+        help="name of dataset",
+    )
+    parser.add_argument(
         "--root_path",
         type=str,
-        # default="/media/undergrad/Data/tubitak-data/ham10000/all_images",
-        # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/organized/stage_2_train",
         default="/media/undergrad/Data/tubitak-data/isic2019/all_images",
         help="dataset root dir",
     )
     parser.add_argument(
         "--csv_file_train",
         type=str,
-        # default="/media/undergrad/Data/tubitak-data/ham10000/train.csv",
-        # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/training.csv",
         default="/media/undergrad/Data/tubitak-data/isic2019/train.csv",
         help="training set csv file",
     )
@@ -24,16 +34,12 @@ def args_parser():
     parser.add_argument(
         "--csv_file_test",
         type=str,
-        # default="/media/undergrad/Data/tubitak-data/ham10000/test.csv",
-        # default="/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/testing.csv",
         default="/media/undergrad/Data/tubitak-data/isic2019/test.csv",
         help="testing set csv file",
     )
     parser.add_argument(
         "--num_classes",
         type=int,
-        # default=7,
-        # default=5,
         default=8,
         help="number of classes",
     )
@@ -71,4 +77,30 @@ def args_parser():
         "--consistency_rampup", type=float, default=30, help="consistency_rampup"
     )
     args = parser.parse_args()
+
+    match args.dataset:
+        case "ham10000":
+            args.root_path = "/media/undergrad/Data/tubitak-data/ham10000/all_images"
+            args.csv_file_train = (
+                "/media/undergrad/Data/tubitak-data/ham10000/train.csv"
+            )
+            args.csv_file_test = "/media/undergrad/Data/tubitak-data/ham10000/test.csv"
+            args.num_classes = 7
+        case "isic2019":
+            args.root_path = "/media/undergrad/Data/tubitak-data/isic2019/all_images"
+            args.csv_file_train = (
+                "/media/undergrad/Data/tubitak-data/isic2019/train.csv"
+            )
+            args.csv_file_test = "/media/undergrad/Data/tubitak-data/isic2019/test.csv"
+            args.num_classes = 8
+        case "brain":
+            args.root_path = "/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/organized/stage_2_train"
+            args.csv_file_train = (
+                "/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/training.csv"
+            )
+            args.csv_file_test = (
+                "/media/undergrad/Data/tubitak-data/brain/RSNA-ICH/testing.csv"
+            )
+            args.num_classes = 5
+
     return args

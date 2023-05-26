@@ -9,24 +9,29 @@ from sklearn.metrics import (
     f1_score,
     roc_auc_score,
 )
+from options import args_parser
 
-# brain tumor dataset
-# N_CLASSES = 5
-# CLASS_NAMES = [
-#     "Melanoma",
-#     "Melanocytic nevus",
-#     "Basal cell carcinoma",
-#     "Actinic keratosis",
-#     "Benign keratosis",
-# ]
+args = args_parser()
 
-# ham10000 dataset
+N_CLASSES = args.num_classes
 # N_CLASSES = 7
-# CLASS_NAMES = ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
+# N_CLASSES = 8
 
-# isic2019 dataset
-N_CLASSES = 8
-CLASS_NAMES = ["MEL", "NV", "BCC", "AKIEC", "BKL", "DF", "VASC", "SCC"]
+CLASS_NAMES = None
+
+match args.dataset:
+    case "isic2019":
+        CLASS_NAMES = ["MEL", "NV", "BCC", "AKIEC", "BKL", "DF", "VASC", "SCC"]
+    case "ham10000":
+        CLASS_NAMES = ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
+    case "brain":
+        CLASS_NAMES = [
+            "Melanoma",
+            "Melanocytic nevus",
+            "Basal cell carcinoma",
+            "Actinic keratosis",
+            "Benign keratosis",
+        ]
 
 
 def compute_AUCs(gt, pred, competition=True):

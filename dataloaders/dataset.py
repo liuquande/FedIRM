@@ -6,23 +6,8 @@ Read images and corresponding labels.
 import torch
 from torch.utils.data import Dataset
 import pandas as pd
-import numpy as np
 from PIL import Image
 import os
-import itertools
-from torch.utils.data.sampler import Sampler
-
-# brain tumor dataset
-# N_CLASSES = 5
-# CLASS_NAMES = [ 'Melanoma', 'Melanocytic nevus', 'Basal cell carcinoma', 'Actinic keratosis', 'Benign keratosis']
-
-# ham10000 dataset
-# N_CLASSES = 7
-# CLASS_NAMES = ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
-
-# isic2019 dataset
-N_CLASSES = 8
-CLASS_NAMES = ["MEL", "NV", "BCC", "AK", "BKL", "DF", "VASC", "SCC"]
 
 
 class CheXpertDataset(Dataset):

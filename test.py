@@ -13,7 +13,8 @@ import random
 import pandas as pd
 
 args = args_parser()
-checkpoint_path = os.path.join("model/ham10000_sup", "epoch_100.pth")
+
+checkpoint_path = os.path.join(f"./model/{args.dataset}_{args.mode}", "epoch_100.pth")
 
 if __name__ == "__main__":
     checkpoint = torch.load(checkpoint_path)
@@ -52,7 +53,6 @@ if __name__ == "__main__":
     all_preds = pd.DataFrame(columns=["thresh", "AUROC", "Accu", "Sens", "Spec", "f1"])
 
     thre = np.arange(0.4, 0.93, 0.01)
-    # thre = np.arange(0.4, 0.42, 0.01)
     thre = list(thre)
     for thresh in thre:
         print("begin", thresh)
@@ -97,4 +97,5 @@ if __name__ == "__main__":
             ]
         )
 
-    all_preds.to_csv("test.csv", index=False)
+    os.makedirs("./test_csv", exist_ok=True)
+    all_preds.to_csv(f"./test_csv/test_for_{args.dataset}_{args.mode}.csv", index=False)
