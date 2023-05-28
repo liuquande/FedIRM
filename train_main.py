@@ -165,6 +165,7 @@ if __name__ == "__main__":
         trainer_locals.append(
             UnsupervisedLocalUpdate(args, train_dataset, dict_users[i])
         )
+
     for com_round in range(args.rounds):
         print("begin")
         loss_locals = []
@@ -216,7 +217,9 @@ if __name__ == "__main__":
             avg_matrix = avg_matrix / len(supervised_user_id)
 
         with torch.no_grad():
+            print("begin fedavg")
             w_glob = FedAvg(w_locals)
+            print(w_glob.keys())
 
         net_glob.load_state_dict(w_glob)
         for i in supervised_user_id:
