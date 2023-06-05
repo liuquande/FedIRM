@@ -94,19 +94,20 @@ if __name__ == "__main__":
     # create logs folder if not exist
     os.makedirs("./logs", exist_ok=True)
 
-    # add a line end of the log file
-    with open(f"./logs/{args.dataset}_log.txt", "a") as f:
-        f.write(f"\n{100*'-'}\n")
-
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
     logging.basicConfig(
-        filename=f"./logs/{args.dataset}_log.txt",
+        filename=f"./logs/{args.dataset}.log",
         level=logging.INFO,
         format="[%(asctime)s.%(msecs)03d] %(message)s",
         datefmt="%H:%M:%S",
     )
     logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+
+    # add a line end of the log file
+    logging.info(f"{'='*100}\n")
+
     logging.info(str(args))
+
     if args.deterministic:
         cudnn.benchmark = False
         cudnn.deterministic = True
